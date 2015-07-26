@@ -44,6 +44,11 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
+      less: {
+        files: ['<%= yeoman.app %>/less/{,*/}*.less'],
+        tasks: ['newer:less']
+        },
+
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
@@ -62,7 +67,13 @@ module.exports = function (grunt) {
         ]
       }
     },
-
+  less: {
+    development: {
+      files: {
+        "<%= yeoman.app %>/styles/main.css": "<%= yeoman.app %>/less/main.less"
+      }
+    }
+  },
     // The actual grunt server settings
     connect: {
       options: {
