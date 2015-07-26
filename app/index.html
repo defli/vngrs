@@ -16,29 +16,23 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="bookaApp">
+<body ng-app="bookaApp" class="ba">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
       <!-- Add your site or application content here -->
-      <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-dark">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">VNGRS</a>
+            <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="collapse navbar-collapse" >
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav pl-86">
               <li>
                 <form class="navbar-form navbar-right" role="search">
                   <div class="input-group">
@@ -46,22 +40,22 @@
                       <input type="text" class="form-control" placeholder="Search by Title, Author, Genre, Keyword...">
                     </div>
                     <div class="input-group-btn">
-                      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></button>
+                      <button type="submit" class="btn btn-light-blue btn-no-radius plr-16"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></button>
                     </div>
                   </div>
                 </form>
 
               </li>
-              <li><a href="#">Recommandations</a></li>
+              <li><a href="#" class="ml-5">Recommendations</a></li>
               <li dropdown class="dropdown">
-                <a href="#" class="dropdown-toggle" dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Subjects <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle ml-5" dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Subjects <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Sci-fi</a></li>
                   <li><a href="#">Enginnering</a></li>
                 </ul>
               </li>
-              <li><a href>Sign In | Register</a></li>
-              <li><a href><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 0</a></li>
+              <li><a href class="btn btn-dark-green btn-no-radius plr-25">SIGN IN  <span class="nav-slim-divider">I</span>  Register</a></li>
+              <li><a href class="btn btn-light-blue btn-no-radius plr-8"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <span class="navbar-note">0</span></a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

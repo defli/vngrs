@@ -1,0 +1,143 @@
+.ba {
+  .navbar {
+    min-height: 46px;
+    border: 0;
+  }
+  .navbar-dark {
+    background-color: @navbar-dark-bg;
+    border-color: @navbar-dark-border;
+    border-radius: 0;
+    .navbar-brand {
+      color: @navbar-dark-brand-color;
+      padding: 10px;
+      padding-left: 20px;
+      height: 46px;
+      &:hover,
+      &:focus {
+        color: @navbar-dark-brand-hover-color;
+        background-color: @navbar-dark-brand-hover-bg;
+      }
+    }
+
+    .navbar-note {
+      font-size: 16px;
+      padding-left: 6px;
+      line-height: 1em;
+    }
+
+    .nav-slim-divider {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .navbar-form {
+      padding: 0;
+    }
+
+    .navbar-text {
+      color: @navbar-dark-color;
+    }
+
+    .navbar-nav {
+      > li input {
+        height: inherit;
+        border: 0;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        width: 223px;
+        font-family: @navbar-dark-font-family;
+        font-size: 12px;
+      }
+
+      > li button {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
+      > li > a {
+        color: @navbar-dark-link-color;
+        font-family: @navbar-dark-font-family;
+        font-weight: italic;
+        font-size: @navbar-dark-font-size;
+        text-transform: uppercase;
+
+        padding-top: 12px;
+        padding-bottom: 12px;
+        &:hover,
+        &:focus {
+          color: @navbar-dark-link-hover-color;
+          background-color: @navbar-dark-link-hover-bg;
+        }
+      }
+      > .active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navbar-dark-link-active-color;
+          background-color: @navbar-dark-link-active-bg;
+        }
+      }
+      > .disabled > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navbar-dark-link-disabled-color;
+          background-color: @navbar-dark-link-disabled-bg;
+        }
+      }
+    }
+
+    // Darken the responsive nav toggle
+    .navbar-toggle {
+      border-color: @navbar-dark-toggle-border-color;
+      &:hover,
+      &:focus {
+        background-color: @navbar-dark-toggle-hover-bg;
+      }
+      .icon-bar {
+        background-color: @navbar-dark-toggle-icon-bar-bg;
+      }
+    }
+
+    .navbar-collapse,
+    .navbar-form {
+      border-color: darken(@navbar-dark-bg, 7%);
+      margin: 0;
+    }
+
+    // Dropdowns
+    .navbar-nav {
+      > .open > a {
+        &,
+        &:hover,
+        &:focus {
+          background-color: @navbar-dark-link-active-bg;
+          color: @navbar-dark-link-active-color;
+        }
+      }
+    }
+
+    .navbar-link {
+      color: @navbar-dark-link-color;
+      &:hover {
+        color: @navbar-dark-link-hover-color;
+      }
+    }
+
+    .btn-link {
+      color: @navbar-dark-link-color;
+      &:hover,
+      &:focus {
+        color: @navbar-dark-link-hover-color;
+      }
+      &[disabled],
+      fieldset[disabled] & {
+        &:hover,
+        &:focus {
+          color: @navbar-dark-link-disabled-color;
+        }
+      }
+    }
+  }
+
+}
