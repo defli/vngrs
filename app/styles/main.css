@@ -47,8 +47,47 @@
 .tk-brandon-grotesque {
   font-family: "brandon-grotesque", sans-serif;
 }
+.ba .header-italic {
+  font-size: 26pt;
+  font-family: "SignPainter-HouseScript", Arial, times;
+  font-weight: italic;
+  margin-top: 15px;
+  line-height: 1em;
+  padding: 0;
+  margin-bottom: 0;
+}
+.ba .header-italic.sm {
+  font-size: 18pt;
+}
+.ba .header-italic.xsm {
+  font-size: 14pt;
+}
+.ba .header-bold {
+  font-size: 22pt;
+  font-family: "brandon-grotesque", Arial, times;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1em;
+  padding: 0;
+  margin-top: 0;
+}
+.ba .header-bold.sm {
+  font-size: 18pt;
+}
+.ba .header-bold.xsm {
+  font-size: 12pt;
+}
+.ba .header-text {
+  font-family: "brandon-grotesque", Arial, times;
+  color: #48a7af;
+  font-weight: bold;
+  font-size: 10pt;
+}
 .ba .container {
   max-width: 990px;
+}
+.ba .pr-30 {
+  padding-right: 30px;
 }
 .ba .plr-8 {
   padding-left: 8px;
@@ -70,6 +109,7 @@
 }
 .ba .navbar {
   min-height: 46px;
+  margin-bottom: 0;
   border: 0;
 }
 .ba .navbar-dark {
@@ -316,4 +356,94 @@ fieldset[disabled] .ba .btn-light-blue.active {
 }
 .ba .btn-no-radius {
   border-radius: 0;
+}
+.ba .star-white {
+  font-size: 20pt;
+  text-shadow: 4px 4px 12px #969696;
+  color: #fff;
+}
+.ba .star-green {
+  font-size: 20pt;
+  text-shadow: 4px 4px 12px #969696;
+  color: #48a7af;
+}
+.ba .ribbon {
+  position: relative;
+  float: left;
+  padding-top: 12px;
+  color: #000;
+  height: 76px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  width: 80px;
+  background: #48a7af;
+  border: 2px solid white;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), inset 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-size: 9pt;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ba .ribbon::after {
+  content: " ";
+  position: absolute;
+  left: -16px;
+  width: 0;
+  height: 0;
+  bottom: -8px;
+  border-style: solid;
+  border-width: 0 55px 20px 55px;
+  border-color: transparent transparent #e7e7e7 transparent;
+}
+.ba .ribbon::before {
+  content: " ";
+  position: absolute;
+  left: -2px;
+  width: 0;
+  height: 0;
+  bottom: -1px;
+  border-style: solid;
+  border-width: 0 41px 15px 41px;
+  border-color: transparent transparent #fff transparent;
+}
+.ba .ribbon.active {
+  border-bottom: 0;
+}
+.ba .ribbon.active::after {
+  border-width: 18px 38px 0 38px;
+  border-color: #48a7af transparent transparent transparent;
+  bottom: -18px;
+  left: 1px;
+}
+.ba .ribbon.active::before {
+  border-width: 20px 40px 0 40px;
+  border-color: #fff transparent transparent transparent;
+  bottom: -20px;
+  left: -2px;
+}
+.ba .ribbon.dark-green {
+  background-color: #48a7af;
+}
+.ba .ribbon.light-green {
+  background-color: #a3e0fd;
+}
+.ba .ribbon.light-blue {
+  background-color: #a3e0fd;
+}
+.ba .ribbon.light-green {
+  background-color: #d1ffa3;
+}
+.ba .ribbon.light-yellow {
+  background-color: #fcd65c;
+}
+.ba .ribbon.light-red {
+  background-color: #fdadac;
+}
+.ba .ribbon.light-purple {
+  background-color: #d6adff;
+}
+.ba {
+  background-color: #e7e7e7;
+  font-family: "brandon-grotesque", Arial, times;
 }

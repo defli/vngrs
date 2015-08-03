@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="bookaApp" class="ba">
+<body ng-app="bookaApp"  class="ba">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -58,9 +58,11 @@
               <li><a href class="btn btn-light-blue btn-no-radius plr-8"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <span class="navbar-note">0</span></a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+        </div><!-- /.container -->
       </nav>
-
+      
+      <h3 class="text-center" ng-hide="loaded">Loading...</h3>
+      <ng-view></ng-view>
       <!-- build:js(.) scripts/vendor.js -->
       <!-- bower:js -->
       <script src="bower_components/angular/angular.js"></script>
@@ -71,13 +73,16 @@
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/angular-touch/angular-touch.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/lodash.js"></script>
+      <script src="bower_components/restangular/dist/restangular.js"></script>
       <!-- endbower -->
       <!-- endbuild -->
 
       <!-- build:js({.tmp,app}) scripts/scripts.js -->
       <script src="scripts/app.js"></script>
       <script src="scripts/controllers/main.js"></script>
-      <script src="scripts/controllers/about.js"></script>
+      <script src="scripts/services/reviewmodel.js"></script>
+      <script src="scripts/directives/read-more.js"></script>
       <!-- endbuild -->      
     </body>
     </html>

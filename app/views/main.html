@@ -1,23 +1,61 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+     <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="text-center header-italic">Book</h4>
+          <h3 class="text-center header-bold">Reviews</h3>
+          <div class="text-center">
+            <span class="glyphicon glyphicon-star star-green"></span>
+            <span class="glyphicon glyphicon-star star-green"></span>
+            <span class="glyphicon glyphicon-star star-green"></span>
+            <span class="glyphicon glyphicon-star star-green"></span>
+            <span class="glyphicon glyphicon-star star-white"></span>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+          </div>
+          <h5 class="text-center header-text">225 Total Reviews</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">See reviews from:</div>
+        <div class="col-md-8">
+          <div class="row">
+            <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="ribbon.color" ng-repeat="ribbon in _review.ribbons">
+              <div class="ribbon-text">{{ ribbon.title }}</div>
+              <div class="ribbon-text">({{ ribbon.len }})</div>
+            </a> <!-- /.ribbon -->   
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+            <div class="col-md-12">
+              <div class="pull-left">
+                <h3 class="header-italic sm">{{ _review.orderBy.name }}</h3>
+                <h4 class="header-bold sm">Reviews</h4>
+              </div>
+              <div class="pull-right">
+                <span>Sort by:</span>
+                <div class="btn-group" dropdown>
+                  <button  class="btn btn-" dropdown-toggle>
+                    {{ _review.orderBy.name }} <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" ng-repeat="order in _review.orders"><a href ng-click="_review.setOrder(order)">{{ order.name }}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | limitTo: _review.limitTo | orderBy: _review.orderBy.slug">
+              <div class="content-border">
+                <div>{{ review.date | date }}</div>
+                <div><b>{{ review.user.firstname }} {{ review.user.lastname | uppercase }}</b></div>
+                <div>{{ review.book_type }}</div>
+                <h3 class="header-bold xsm">{{ review.rating }} - {{ review.title }}</h3>
+              </div>
+              <read-more content="review.content" limit="800"></read-more>
+              <hr>
+            </div>
+            <div class="col-md-12">
+              <a href class="btn pull-left" ng-show="_review.limitTo" ng-click="_review.setLimit(false)">See All Reviews ({{ _review.selectedRibbon.len }})</a>
+              <a href class="btn pull-right">Add Review</a>
+            </div>
+          </div>
+        </div><!-- /.row -->
+      </div>
+      <div class="col-md-4"></div>
+    </div><!-- /.container -->
