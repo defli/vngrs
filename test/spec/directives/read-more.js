@@ -5,11 +5,10 @@ describe('Directive: readMore', function () {
   // load the directive's module
   beforeEach(module('bookaApp'));
 
-  var element,
-  scope;
+  var  scope;
 
   beforeEach(inject(function ($rootScope) {
-    scope = $rootScope.$new();
+  	scope = $rootScope.$new();
   }));
 
 });
