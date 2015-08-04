@@ -13,14 +13,17 @@
 
   _this.init = function() {
     _this.limitTo = 10;
-
+    _this.stars = [];
     _this.reviews = reviews;
+    _this.total = reviews.length;
     _this.setRibbonCounts();
+    _this.setStarCounts();
     _this.setOrder();
     _this.setSelectedRibbon();
 
     $rootScope.loaded = true;
   };
+
 
   _this.setRibbonCounts = function() {
     var counts = _.countBy(_this.reviews, 'user.type');
@@ -33,6 +36,19 @@
     });
   };
 
+
+  _this.setStarCounts = function() {
+    var counts = _.countBy(_this.reviews, 'rating');
+
+    _.forEach(counts, function(n, key) {
+      _this.stars.push({
+        'name': parseInt(key),
+        'count': n,
+        'percentage': parseInt((n / _this.total) * 100)
+      });
+
+    });
+  };
 
   _this.setSelectedRibbon = function(ribbon) {
     if(typeof ribbon === 'undefined') {

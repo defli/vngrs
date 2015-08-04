@@ -15,7 +15,8 @@ describe('Controller: MainCtrl', function () {
     {
       user: {
         type: 'reader'
-      }
+      },
+      rating: 1
     }
     ];
     MainCtrl = $controller('MainCtrl', {
@@ -36,6 +37,14 @@ describe('Controller: MainCtrl', function () {
   it('should calculate ribbon elements', function () {
     MainCtrl.setRibbonCounts();
     expect(MainCtrl.ribbons[1].len).toBe(1);
+  });
+
+  it('should calculate stars', function () {
+    MainCtrl.setStarCounts();
+    expect(MainCtrl.stars[0].name).toBe(1);
+    expect(MainCtrl.stars[0].percentage).toBe(100);
+
+    expect(MainCtrl.stars[0].count).toBe(1);
   });
 
   it('should select first ribbon', function () {
