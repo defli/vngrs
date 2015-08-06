@@ -25,6 +25,7 @@
   };
 
 
+
   _this.setRibbonCounts = function() {
     var counts = _.countBy(_this.reviews, 'user.type');
     counts.everyone = _this.reviews.length;
@@ -39,15 +40,19 @@
 
   _this.setStarCounts = function() {
     var counts = _.countBy(_this.reviews, 'rating');
-
+    var sumWithStar = 0;
+    var sum = 0;
     _.forEach(counts, function(n, key) {
       _this.stars.push({
         'name': parseInt(key),
         'count': n,
         'percentage': parseInt((n / _this.total) * 100)
       });
-
+      sum += n;
+      sumWithStar += key * n;
     });
+
+    _this.average = Math.round(sumWithStar / sum);
   };
 
   _this.setSelectedRibbon = function(ribbon) {

@@ -63,7 +63,7 @@
               <span class="glyphicon glyphicon-star star-green"></span>
               <span class="glyphicon glyphicon-star star-green"></span>
               <span class="glyphicon glyphicon-star star-white"></span>
-              <h6>Avarage Rating: Review 4 out of 5 star</h6>
+              <h6>Avarage Rating: Review {{ _review.average }} out of 5 star</h6>
             </div>
             <div class="row" ng-repeat="star in _review.stars | orderBy:-name">
               <div class="pull-left">
