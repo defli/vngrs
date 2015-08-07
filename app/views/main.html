@@ -47,11 +47,11 @@
               <div>
                 <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> <span class="header-bold xsm">{{ review.title }}</span>
               </div>
-            </header>
+            </header><!-- :article-header -->
             <summary read-more content="review.content" limit="800" class="content-text"></summary>
             <footer>
               <hr>
-            </footer>
+            </footer><!-- :article-footer -->
           </article><!-- /.col-md-12 -->
           <footer class="col-md-12">
             <a href class="btn pull-left" ng-show="_review.limitTo" ng-click="_review.setLimit(false)">See All Reviews ({{ _review.selectedRibbon.len }})</a>
