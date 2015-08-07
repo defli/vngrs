@@ -1,5 +1,5 @@
      <div class="container">
-      <div class="row">
+       <header class="row">
         <div class="col-md-12">
           <h4 class="text-center header-italic">Book</h4>
           <h3 class="text-center header-bold">Reviews</h3>
@@ -8,53 +8,58 @@
           </div>
           <h5 class="text-center header-text">{{ _review.total }} Total Reviews</h5>
         </div>
-      </div>
+      </header>
       <div class="row">
         <div class="col-md-12">See reviews from:</div>
       </div>
       <div class="row">
-        <div class="col-md-8">
-          <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="[ribbon.color, {active: ribbon.slug === _review.selectedRibbon.slug }]" ng-repeat="ribbon in _review.ribbons">
-            <div class="ribbon-text">{{ ribbon.title }}</div>
-            <div class="ribbon-text">({{ ribbon.len }})</div>
-          </a> <!-- /.ribbon -->   
-
-          <div class="col-md-12">
-            <div class="pull-left">
-              <h3 class="header-italic sm">{{ _review.orderBy.name }}</h3>
-              <h4 class="header-bold sm">Reviews</h4>
-            </div>
-            <div class="pull-right">
-              <span>Sort by:</span>
-              <div class="btn-group" dropdown>
-                <button  class="btn btn-" dropdown-toggle>
-                  {{ _review.orderBy.name }} <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
-                  <li role="menuitem" ng-repeat="order in _review.orders"><a href ng-click="_review.setOrder(order)">{{ order.name }}</a></li>
-                </ul>
+        <section class="col-md-8">
+          <header>
+            <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="[ribbon.color, {active: ribbon.slug === _review.selectedRibbon.slug }]" ng-repeat="ribbon in _review.ribbons">
+              <div class="ribbon-text">{{ ribbon.title }}</div>
+              <div class="ribbon-text">({{ ribbon.len }})</div>
+            </a> <!-- /.ribbon -->   
+            <div class="col-md-12">
+              <div class="pull-left">
+                <h3 class="header-italic sm">{{ _review.orderBy.name }}</h3>
+                <h4 class="header-bold sm">Reviews</h4>
               </div>
-            </div>
-          </div><!-- /.col-md-12 -->
-          <div class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | limitTo: _review.limitTo | orderBy: _review.orderBy.slug">
-            <div class="content-border">
-              <div class="content-date">{{ review.date | date:'longDate' }}</div>
-              <div class="content-author">{{ review.user.firstname }} {{ review.user.lastname }}</div>
-              <div>{{ review.book_type }}</div>
-            </div>
-            <div >
-              <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> <span class="header-bold xsm">{{ review.title }}</span>
-            </div>
-            <read-more content="review.content" limit="800" class="content-text"></read-more>
-            <hr>
-          </div><!-- /.col-md-12 -->
-          <div class="col-md-12">
+              <div class="pull-right">
+                <span>Sort by:</span>
+                <div class="btn-group" dropdown>
+                  <button  class="btn btn-" dropdown-toggle>
+                    {{ _review.orderBy.name }} <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" ng-repeat="order in _review.orders"><a href ng-click="_review.setOrder(order)">{{ order.name }}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div><!-- /.col-md-12 -->
+          </header><!-- / :content-header -->
+          <section class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | limitTo: _review.limitTo | orderBy: _review.orderBy.slug">
+            <header>
+              <div class="content-border">
+                <time class="content-date">{{ review.date | date:'longDate' }}</time>
+                <div class="content-author">{{ review.user.firstname }} {{ review.user.lastname }}</div>
+                <div>{{ review.book_type }}</div>
+              </div>
+              <div>
+                <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> <span class="header-bold xsm">{{ review.title }}</span>
+              </div>
+            </header>
+            <summary read-more content="review.content" limit="800" class="content-text"></summary>
+            <footer>
+              <hr>
+            </footer>
+          </section><!-- /.col-md-12 -->
+          <footer class="col-md-12">
             <a href class="btn pull-left" ng-show="_review.limitTo" ng-click="_review.setLimit(false)">See All Reviews ({{ _review.selectedRibbon.len }})</a>
             <a href class="btn pull-right">Add Review</a>
-          </div><!-- /.col-md-12 -->
-        </div><!-- /.col-md-8 -->
-        <div class="col-md-4">
-          <div class="well">
+          </footer><!-- /.col-md-12 -->
+        </section><!-- /.col-md-8 -->
+        <section class="col-md-4">
+          <aside class="well">
             <div class="text-center">
               <span class="glyphicon glyphicon-star star-green star-md" ng-repeat="star in _review.stars" ng-class="{active: _review.average < star.name}"></span>
               <h6>Avarage Rating: Review {{ _review.average }} out of 5 star</h6>
@@ -72,15 +77,15 @@
               </div>
               <div class="pull-right">({{ star.count }})</div>
             </div>
-          </div><!-- /.well -->
-          <div class="well">
+          </aside><!-- /.well -->
+          <aside class="well">
             <div class="text-center">Paperback</div>
             <div class="text-center">{{ 2 | currency }}</div>
             <div class="text-center"><a href class="btn btn-success">{{ 'Add to cart' | uppercase }}</a></div>
             <div class="text-center"><a href class="btn btn-primary">{{ 'Buy else where' | uppercase }}<span class="caret"></span></a></div>
             <div class="text-center">-OR-</div>
             <div class="text-center"><a href class="btn btn-warning">{{ 'Buy ebook now' | uppercase }}</a></div>
-          </div><!-- /.well -->
-        </div><!-- /.col-md-4 -->
+          </aside><!-- /.well -->
+        </section><!-- /.col-md-4 -->
       </div>
     </div><!-- /.container -->

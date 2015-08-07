@@ -15,7 +15,7 @@
  			'limit': '@'
  		},
 
- 		restrict: 'E',
+ 		restrict: 'EA',
  		link: function (scope) {
  			var shortContent = '';
  			if(scope.content.length > scope.limit) {
