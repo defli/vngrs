@@ -357,15 +357,33 @@ fieldset[disabled] .ba .btn-light-blue.active {
 .ba .btn-no-radius {
   border-radius: 0;
 }
-.ba .star-white {
+.ba .star-green {
+  color: #48a7af;
+}
+.ba .star-lg {
   font-size: 20pt;
+  margin-left: 4px;
+  margin-right: 4px;
   text-shadow: 4px 4px 12px #969696;
+}
+.ba .star-lg.active {
   color: #fff;
 }
-.ba .star-green {
-  font-size: 20pt;
-  text-shadow: 4px 4px 12px #969696;
-  color: #48a7af;
+.ba .star-md {
+  font-size: 16pt;
+  margin-left: 3px;
+  text-shadow: 3px 3px 20px #969696;
+}
+.ba .star-md.active {
+  color: #c4c4c4;
+}
+.ba .star-sm {
+  font-size: 12pt;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.ba .star-sm.active {
+  color: #c4c4c4;
 }
 .ba .ribbon {
   position: relative;

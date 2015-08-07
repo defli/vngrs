@@ -24,8 +24,6 @@
     $rootScope.loaded = true;
   };
 
-
-
   _this.setRibbonCounts = function() {
     var counts = _.countBy(_this.reviews, 'user.type');
     counts.everyone = _this.reviews.length;
