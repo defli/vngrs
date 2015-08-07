@@ -14,7 +14,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="ribbon.color" ng-repeat="ribbon in _review.ribbons">
+          <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="[ribbon.color, {active: ribbon.slug === _review.selectedRibbon.slug }]" ng-repeat="ribbon in _review.ribbons">
             <div class="ribbon-text">{{ ribbon.title }}</div>
             <div class="ribbon-text">({{ ribbon.len }})</div>
           </a> <!-- /.ribbon -->   

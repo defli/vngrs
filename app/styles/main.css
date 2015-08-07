@@ -424,6 +424,10 @@ fieldset[disabled] .ba .btn-light-blue.active {
   line-height: 14px;
   text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
+}
+.ba .ribbon:hover {
+  text-decoration: none;
 }
 .ba .ribbon::after {
   content: " ";
@@ -454,7 +458,7 @@ fieldset[disabled] .ba .btn-light-blue.active {
   border-width: 18px 38px 0 38px;
   border-color: #48a7af transparent transparent transparent;
   bottom: -18px;
-  left: 1px;
+  left: 0;
 }
 .ba .ribbon.active::before {
   border-width: 20px 40px 0 40px;
@@ -465,23 +469,38 @@ fieldset[disabled] .ba .btn-light-blue.active {
 .ba .ribbon.dark-green {
   background-color: #48a7af;
 }
-.ba .ribbon.light-green {
-  background-color: #a3e0fd;
-}
-.ba .ribbon.light-blue {
-  background-color: #a3e0fd;
+.ba .ribbon.dark-green.active::after {
+  border-color: #48a7af transparent transparent transparent;
 }
 .ba .ribbon.light-green {
   background-color: #d1ffa3;
 }
+.ba .ribbon.light-green.active::after {
+  border-color: #d1ffa3 transparent transparent transparent;
+}
+.ba .ribbon.light-blue {
+  background-color: #a3e0fd;
+}
+.ba .ribbon.light-blue.active::after {
+  border-color: #a3e0fd transparent transparent transparent;
+}
 .ba .ribbon.light-yellow {
   background-color: #fcd65c;
+}
+.ba .ribbon.light-yellow.active::after {
+  border-color: #fcd65c transparent transparent transparent;
 }
 .ba .ribbon.light-red {
   background-color: #fdadac;
 }
+.ba .ribbon.light-red.active::after {
+  border-color: #fdadac transparent transparent transparent;
+}
 .ba .ribbon.light-purple {
   background-color: #d6adff;
+}
+.ba .ribbon.light-purple.active::after {
+  border-color: #d6adff transparent transparent transparent;
 }
 .ba {
   background-color: #e7e7e7;
