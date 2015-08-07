@@ -38,14 +38,14 @@
           </div><!-- /.col-md-12 -->
           <div class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | limitTo: _review.limitTo | orderBy: _review.orderBy.slug">
             <div class="content-border">
-              <div>{{ review.date | date }}</div>
-              <div><b>{{ review.user.firstname }} {{ review.user.lastname | uppercase }}</b></div>
+              <div class="content-date">{{ review.date | date:'longDate' }}</div>
+              <div class="content-author">{{ review.user.firstname }} {{ review.user.lastname }}</div>
               <div>{{ review.book_type }}</div>
-              <h3 class="header-bold xsm">
-                <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> - {{ review.title }}
-              </h3>
             </div>
-            <read-more content="review.content" limit="800"></read-more>
+            <div >
+              <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> <span class="header-bold xsm">{{ review.title }}</span>
+            </div>
+            <read-more content="review.content" limit="800" class="content-text"></read-more>
             <hr>
           </div><!-- /.col-md-12 -->
           <div class="col-md-12">

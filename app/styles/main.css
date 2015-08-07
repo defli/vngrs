@@ -66,7 +66,7 @@
   font-size: 22pt;
   font-family: "brandon-grotesque", Arial, times;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1em;
   padding: 0;
   margin-top: 0;
@@ -75,13 +75,35 @@
   font-size: 18pt;
 }
 .ba .header-bold.xsm {
-  font-size: 12pt;
+  margin-left: 6px;
+  font-size: 18px;
 }
 .ba .header-text {
   font-family: "brandon-grotesque", Arial, times;
   color: #48a7af;
   font-weight: bold;
   font-size: 10pt;
+}
+.ba .content-border {
+  border-left: 10px solid #a3e0fd;
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ba .content-date {
+  color: #8f8f8f;
+  font-weight: bold;
+  font-size: 10pt;
+}
+.ba .content-author {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+.ba .content-text {
+  line-height: 22px;
+  font-size: 16px;
 }
 .ba .container {
   max-width: 990px;
@@ -378,7 +400,7 @@ fieldset[disabled] .ba .btn-light-blue.active {
   color: #c4c4c4;
 }
 .ba .star-sm {
-  font-size: 12pt;
+  font-size: 16px;
   margin-left: 2px;
   margin-right: 2px;
 }
