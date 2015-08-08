@@ -75,7 +75,8 @@ grunt.initConfig({
                         options: {
                           strictMath: true,
                           sourceMap: true,
-                          sourceMapFilename: 'main.css.map'                      
+                          sourceMapURL: 'main.css.map',
+                          sourceMapFilename: '<%= yeoman.app %>/styles/main.css.map'                      
                         }
                       }
                       },
