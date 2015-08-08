@@ -15,14 +15,14 @@
       <div class="row">
         <section class="col-md-8">
           <header>
-            <div class="row">
+            <div class="row mb-26">
               <div class="col-md-12">
                 <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="[ribbon.color, {active: ribbon.slug === _review.selectedRibbon.slug }]" ng-repeat="ribbon in _review.ribbons">
                   <div class="ribbon-text">{{ ribbon.title }}</div>
                   <div class="ribbon-text">({{ ribbon.len }})</div>
                 </a> <!-- /.ribbon -->   
-              </div> <!-- ./row -->
-            </div>
+              </div> <!-- /.col-md-12 -->
+            </div><!-- /.row -->
             <div class="row">
               <div class="col-md-12">
                 <div class="pull-left">
