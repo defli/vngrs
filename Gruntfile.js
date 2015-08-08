@@ -51,7 +51,7 @@ grunt.initConfig({
 
             styles: {
               files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-              tasks: ['newer:copy:styles', 'autoprefixer']
+              tasks: ['newer:copy:styles']
               },
               gruntfile: {
                 files: ['Gruntfile.js']
@@ -71,9 +71,14 @@ grunt.initConfig({
                     development: {
                       files: {
                         '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/less/main.less'
+                        },
+                        options: {
+                          strictMath: true,
+                          sourceMap: true,
+                          sourceMapFilename: 'main.css.map'                      
+                        }
                       }
-                    }
-                    },
+                      },
   // The actual grunt server settings
   connect: {
     options: {
@@ -95,6 +100,10 @@ grunt.initConfig({
             connect().use(
               '/app/styles',
               connect.static('./app/styles')
+              ),
+            connect().use(
+              '/styles/app/less',
+              connect.static('./app/less')
               ),
             connect.static(appConfig.app)
             ];
