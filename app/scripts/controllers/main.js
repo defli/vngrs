@@ -91,6 +91,10 @@
     return true;
   };
 
+  vm.getColor = function(slug) {
+    var color = _.result(_.findWhere(vm.ribbons,{'slug': slug}), 'color');
+    return color;
+  };
   vm.orders = [
   {
     'slug' : 'helpful_count',

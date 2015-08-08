@@ -90,6 +90,24 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.ba .content-border.dark-green {
+  border-color: #48a7af;
+}
+.ba .content-border.light-green {
+  border-color: #d1ffa3;
+}
+.ba .content-border.light-blue {
+  border-color: #a3e0fd;
+}
+.ba .content-border.light-yellow {
+  border-color: #fcd65c;
+}
+.ba .content-border.light-red {
+  border-color: #fdadac;
+}
+.ba .content-border.light-purple {
+  border-color: #d6adff;
+}
 .ba .content-date {
   color: #8f8f8f;
   font-weight: bold;

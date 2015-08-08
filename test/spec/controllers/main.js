@@ -26,6 +26,10 @@ describe('Controller: MainCtrl', function () {
   }));
 
 
+  it('should get border-color', function () {
+    expect(MainCtrl.getColor('reader')).toBe('light-blue');
+  });
+
   it('should attach ribbons to the scope', function () {
     expect(MainCtrl.ribbons.length).toBe(6);
   });
