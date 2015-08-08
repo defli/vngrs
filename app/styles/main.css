@@ -108,26 +108,31 @@
 .ba .container {
   max-width: 990px;
 }
-.ba .pr-30 {
-  padding-right: 30px;
-}
-.ba .plr-8 {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-.ba .plr-16 {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.ba .plr-25 {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-.ba .pl-86 {
-  padding-left: 86px;
-}
-.ba .ml-5 {
-  margin-left: 5px;
+@media (min-width: 990px) {
+  .ba .pr-30 {
+    padding-right: 30px;
+  }
+  .ba .plr-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .ba .plr-16 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .ba .plr-25 {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .ba .pl-86 {
+    padding-left: 86px;
+  }
+  .ba .ml-5 {
+    margin-left: 5px;
+  }
+  .ba .w-223 {
+    width: 223px;
+  }
 }
 .ba .navbar {
   min-height: 46px;
@@ -170,7 +175,7 @@
   border: 0;
   padding-top: 14px;
   padding-bottom: 14px;
-  width: 223px;
+  width: 100%;
   font-family: "brandon-grotesque", Arial, times;
   font-size: 12px;
 }
