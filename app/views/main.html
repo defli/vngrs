@@ -15,48 +15,58 @@
       <div class="row">
         <section class="col-md-8">
           <header>
-            <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="[ribbon.color, {active: ribbon.slug === _review.selectedRibbon.slug }]" ng-repeat="ribbon in _review.ribbons">
-              <div class="ribbon-text">{{ ribbon.title }}</div>
-              <div class="ribbon-text">({{ ribbon.len }})</div>
-            </a> <!-- /.ribbon -->   
-            <div class="col-md-12">
-              <div class="pull-left">
-                <h3 class="header-italic sm">{{ _review.orderBy.name }}</h3>
-                <h4 class="header-bold sm">Reviews</h4>
-              </div>
-              <div class="pull-right">
-                <span>Sort by:</span>
-                <div class="btn-group" dropdown>
-                  <button  class="btn btn-" dropdown-toggle>
-                    {{ _review.orderBy.name }} <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
-                    <li role="menuitem" ng-repeat="order in _review.orders"><a href ng-click="_review.setOrder(order)">{{ order.name }}</a></li>
-                  </ul>
+            <div class="row">
+              <div class="col-md-12">
+                <a href class="ribbon" ng-click="_review.setFilter(ribbon)" ng-class="[ribbon.color, {active: ribbon.slug === _review.selectedRibbon.slug }]" ng-repeat="ribbon in _review.ribbons">
+                  <div class="ribbon-text">{{ ribbon.title }}</div>
+                  <div class="ribbon-text">({{ ribbon.len }})</div>
+                </a> <!-- /.ribbon -->   
+              </div> <!-- ./row -->
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="pull-left">
+                  <h3 class="header-italic sm">{{ _review.orderBy.name }}</h3>
+                  <h4 class="header-bold sm">Reviews</h4>
                 </div>
-              </div><!-- /.pull-right -->
-            </div><!-- /.col-md-12 -->
+                <div class="pull-right">
+                  <span>Sort by:</span>
+                  <div class="btn-group" dropdown>
+                    <button  class="btn btn-" dropdown-toggle>
+                      {{ _review.orderBy.name }} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                      <li role="menuitem" ng-repeat="order in _review.orders"><a href ng-click="_review.setOrder(order)">{{ order.name }}</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.pull-right -->
+              </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
           </header><!-- / :content-header -->
-          <article class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | limitTo: _review.limitTo | orderBy: _review.orderBy.slug">
-            <header>
-              <div class="content-border">
-                <time class="content-date">{{ review.date | date:'longDate' }}</time>
-                <div class="content-author">{{ review.user.firstname }} {{ review.user.lastname }}</div>
-                <div>{{ review.book_type }}</div>
-              </div>
-              <div>
-                <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> <span class="header-bold xsm">{{ review.title }}</span>
-              </div>
-            </header><!-- :article-header -->
-            <summary read-more content="review.content" limit="800" class="content-text"></summary>
-            <footer>
-              <hr>
-            </footer><!-- :article-footer -->
-          </article><!-- /.col-md-12 -->
-          <footer class="col-md-12">
-            <a href class="btn pull-left" ng-show="_review.limitTo" ng-click="_review.setLimit(false)">See All Reviews ({{ _review.selectedRibbon.len }})</a>
-            <a href class="btn pull-right">Add Review</a>
-          </footer><!-- /.col-md-12 :dodument-footer  -->
+          <div class="row">
+            <article class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | limitTo: _review.limitTo | orderBy: _review.orderBy.slug">
+              <header>
+                <div class="content-border">
+                  <time class="content-date">{{ review.date | date:'longDate' }}</time>
+                  <div class="content-author">{{ review.user.firstname }} {{ review.user.lastname }}</div>
+                  <div>{{ review.book_type }}</div>
+                </div>
+                <div>
+                  <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> <span class="header-bold xsm">{{ review.title }}</span>
+                </div>
+              </header><!-- :article-header -->
+              <summary read-more content="review.content" limit="800" class="content-text"></summary>
+              <footer>
+                <hr>
+              </footer><!-- :article-footer -->
+            </article><!-- /.col-md-12 -->
+          </div><!-- ./row -->
+          <div class="row">
+            <footer class="col-md-12">
+              <a href class="btn pull-left" ng-show="_review.limitTo" ng-click="_review.setLimit(false)">See All Reviews ({{ _review.selectedRibbon.len }})</a>
+              <a href class="btn pull-right">Add Review</a>
+            </footer><!-- /.col-md-12 :dodument-footer  -->
+          </div><!-- /.row -->
         </section><!-- /.col-md-8 :left-section -->
         <section class="col-md-4">
           <aside class="well">
