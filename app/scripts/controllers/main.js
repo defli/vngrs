@@ -9,68 +9,68 @@
  */
  angular.module('bookaApp')
  .controller('MainCtrl', function (reviews, $rootScope) {
-  var _this = this;
+  var vm = this; // vm: virtual model
 
-  _this.init = function() {
-    _this.limitTo = 10;
-    _this.stars = [];
-    _this.reviews = reviews;
-    _this.total = reviews.length;
-    _this.setRibbonCounts();
-    _this.setStarCounts();
-    _this.setOrder();
-    _this.setSelectedRibbon();
+  vm.init = function() {
+    vm.limitTo = 10;
+    vm.stars = [];
+    vm.reviews = reviews;
+    vm.total = reviews.length;
+    vm.setRibbonCounts();
+    vm.setStarCounts();
+    vm.setOrder();
+    vm.setSelectedRibbon();
 
     $rootScope.loaded = true;
   };
 
-  _this.setRibbonCounts = function() {
-    var counts = _.countBy(_this.reviews, 'user.type');
-    counts.everyone = _this.reviews.length;
+  vm.setRibbonCounts = function() {
+    var counts = _.countBy(vm.reviews, 'user.type');
+    counts.everyone = vm.reviews.length;
 
     _.forEach(counts, function(n, key) {
 
-      var elm = _.find(_this.ribbons, {'slug': key}, this);
+      var elm = _.find(vm.ribbons, {'slug': key}, this);
       elm.len = n;
     });
   };
 
 
-  _this.setStarCounts = function() {
-    var counts = _.countBy(_this.reviews, 'rating');
+  vm.setStarCounts = function() {
+    var counts = _.countBy(vm.reviews, 'rating');
     var sumWithStar = 0;
     var sum = 0;
     _.forEach(counts, function(n, key) {
-      _this.stars.push({
+      vm.stars.push({
         'name': parseInt(key),
         'count': n,
-        'percentage': parseInt((n / _this.total) * 100)
+        'percentage': parseInt((n / vm.total) * 100)
       });
       sum += n;
       sumWithStar += key * n;
     });
 
-    _this.average = Math.round(sumWithStar / sum);
+    vm.average = Math.round(sumWithStar / sum);
   };
 
-  _this.setSelectedRibbon = function(ribbon) {
+  vm.setSelectedRibbon = function(ribbon) {
     if(typeof ribbon === 'undefined') {
-      _this.selectedRibbon = _this.ribbons[0];
+      vm.selectedRibbon = vm.ribbons[0];
     } else {
-      _this.selectedRibbon = ribbon;
+      vm.selectedRibbon = ribbon;
     }
   };
 
-  _this.setFilter = function(ribbon) {
-    _this.setSelectedRibbon(ribbon);
-    _this.setLimit(10);
+  vm.setFilter = function(ribbon) {
+    vm.setSelectedRibbon(ribbon);
+    vm.setLimit(10);
     var slug = ribbon.slug;
     if(slug === 'everyone') {
-      _this.filterBy  = {};
+      vm.filterBy  = {};
       return true;
     }
 
-    _this.filterBy = {
+    vm.filterBy = {
       'user': 
       {'type': slug} 
     };
@@ -78,20 +78,20 @@
     return true;
   };
 
-  _this.setLimit = function(limit) {
-    _this.limitTo = limit;
+  vm.setLimit = function(limit) {
+    vm.limitTo = limit;
   };
 
-  _this.setOrder = function(obj) {
+  vm.setOrder = function(obj) {
     if(typeof obj === 'undefined') {
-      obj = _this.orders[0];
+      obj = vm.orders[0];
     }
 
-    _this.orderBy = obj;
+    vm.orderBy = obj;
     return true;
   };
 
-  _this.orders = [
+  vm.orders = [
   {
     'slug' : 'helpful_count',
     'name': 'Most Helpful'
@@ -110,7 +110,7 @@
   }
   ];
 
-  _this.ribbons = [
+  vm.ribbons = [
   {
     'title': 'Everyone',
     'slug': 'everyone',
@@ -151,5 +151,5 @@
   ];
 
 
-  _this.init();
+  vm.init();
 });
