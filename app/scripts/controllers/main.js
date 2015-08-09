@@ -116,15 +116,15 @@
   };
   vm.orders = [
   {
-    'slug' : 'helpful_count',
+    'slug' : '-helpful_count',
     'name': 'Most Helpful'
   },
   {
-    'slug' : 'not_helpful_count',
+    'slug' : '-not_helpful_count',
     'name': 'Most Not Helpful'
   },
   {
-    'slug' : 'rating',
+    'slug' : '-rating',
     'name': 'Highest Rating'
   },  
   {

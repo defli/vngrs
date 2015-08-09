@@ -44,7 +44,7 @@
             </div><!-- /.row -->
           </header><!-- / :content-header -->
           <div class="row">
-            <article class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | limitTo: _review.limitTo | orderBy: _review.orderBy.slug">
+            <article class="col-md-12" ng-repeat="review in _review.reviews | filter: _review.filterBy | orderBy: _review.orderBy.slug | limitTo: _review.limitTo ">
               <header>
                 <div class="content-border" ng-class="_review.getColor(review.user.type)">
                   <time class="content-date">{{ review.date | date:'longDate' }}</time>
