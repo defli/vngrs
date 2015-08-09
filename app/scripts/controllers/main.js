@@ -8,7 +8,7 @@
  * Controller of the bookaApp
  */
  angular.module('bookaApp')
- .controller('MainCtrl', function (reviews, $scope, $rootScope) {
+ .controller('MainCtrl', function (ReviewModel, reviews, $scope, $rootScope) {
   var vm = this; // vm: virtual model
 
   vm.init = function() {
@@ -24,6 +24,19 @@
     $rootScope.loaded = true;
   };
 
+  vm.vote = function(review, type) {
+    var id = review.id;
+    ReviewModel.vote(id, type).then(function() {
+      if(type ==='helpful') {
+        review.helpful_count += 1;
+      } else {
+        review.not_helpful_count += 1;
+
+      }
+      review.voted = true;
+    });
+  };
+
   vm.setRibbonCounts = function() {
     var counts = _.countBy(vm.reviews, 'user.type');
     counts.everyone = vm.reviews.length;
@@ -34,7 +47,6 @@
       elm.len = n;
     });
   };
-
 
   vm.setStarCounts = function() {
     var counts = _.countBy(vm.reviews, 'rating');

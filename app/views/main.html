@@ -57,6 +57,14 @@
               </header><!-- :article-header -->
               <summary read-more content="review.content" limit="800" class="content-text"></summary>
               <footer>
+                <h5>{{ review.helpful_count }} out of {{ review.helpful_count + review.not_helpful_count }} found this review helpful.</h5>
+                <div ng-hide="review.voted">
+                  <span>Was this review helpful to you?</span>
+                  <a href ng-click="_review.vote(review, 'helpful')"><i class="glyphicon glyphicon-thumbs-up"></i> Helpful</a> | 
+                  <a href ng-click="_review.vote(review, 'not_helpful')"><i class="glyphicon glyphicon-thumbs-down"></i> Not Helpful</a>
+                  <a href class="pull-right"><i class="glyphicon glyphicon-flag"></i> Flag This Content For Review</a>
+                </div ng-show="review.voted">
+                <div ng-show="review.voted">Thank you for voting this review.</div>
                 <hr>
               </footer><!-- :article-footer -->
             </article><!-- /.col-md-12 -->

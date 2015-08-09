@@ -15,8 +15,12 @@
 
     // Public API here
     return {
-      all: function () {
-        return Restangular.all('reviews').getList();
-      }
+    	all: function () {
+    		return Restangular.all('reviews').getList();
+    	},
+
+    	vote: function(id, type) {
+    		return Restangular.one('reviews', id).all('vote').post({type: type});
+    	}
     };
-  });
+});
