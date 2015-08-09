@@ -8,7 +8,7 @@
  * Controller of the bookaApp
  */
  angular.module('bookaApp')
- .controller('MainCtrl', function (reviews, $rootScope) {
+ .controller('MainCtrl', function (reviews, $scope, $rootScope) {
   var vm = this; // vm: virtual model
 
   vm.init = function() {
@@ -78,8 +78,15 @@
     return true;
   };
 
-  vm.setLimit = function(limit) {
-    vm.limitTo = limit;
+  vm.setLimit = function(limit, apply) {
+    if(apply === true) {
+      $scope.$apply(function() {
+        vm.limitTo = limit;
+      });
+    } else {
+      vm.limitTo = limit;
+
+    }
   };
 
   vm.setOrder = function(obj) {

@@ -61,12 +61,12 @@
               </footer><!-- :article-footer -->
             </article><!-- /.col-md-12 -->
           </div><!-- ./row -->
-          <div class="row">
+          <div class="row sticky-footer" >
             <footer class="col-md-12">
-              <a href class="btn pull-left" ng-show="_review.limitTo" ng-click="_review.setLimit(false)">See All Reviews ({{ _review.selectedRibbon.len }})</a>
               <a href class="btn pull-right">Add Review</a>
             </footer><!-- /.col-md-12 :dodument-footer  -->
           </div><!-- /.row -->
+          <infinite change="_review.setLimit(limit, apply)" limit-to="_review.limitTo"></infinite>
         </section><!-- /.col-md-8 :left-section -->
         <section class="col-md-4">
           <aside class="well">

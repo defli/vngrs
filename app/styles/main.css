@@ -142,6 +142,9 @@
     padding-left: 25px;
     padding-right: 25px;
   }
+  .ba .pl-27 {
+    padding-left: 27px;
+  }
   .ba .pl-86 {
     padding-left: 86px;
   }
@@ -154,6 +157,14 @@
   .ba .w-223 {
     width: 223px;
   }
+}
+.ba .sticky-footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
 }
 .ba .navbar {
   min-height: 46px;
@@ -439,7 +450,7 @@ fieldset[disabled] .ba .btn-light-blue.active {
   padding-top: 12px;
   color: #000;
   height: 76px;
-  margin-left: 10px;
+  margin-right: 10px;
   box-sizing: border-box;
   width: 80px;
   background: #48a7af;
@@ -531,5 +542,6 @@ fieldset[disabled] .ba .btn-light-blue.active {
 .ba {
   background-color: #e7e7e7;
   font-family: "brandon-grotesque", Arial, times;
+  margin-top: 50px;
 }
 /*# sourceMappingURL=main.css.map */
