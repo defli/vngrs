@@ -4,7 +4,7 @@
           <h4 class="text-center header-italic">Book</h4>
           <h3 class="text-center header-bold">Reviews</h3>
           <div class="text-center">
-            <span class="glyphicon glyphicon-star star-green star-lg" ng-repeat="star in _review.stars" ng-class="{active: _review.average < star.name}"></span>
+            <span class="star-green star-lg" ng-repeat="star in _review.stars" ng-class="{active: _review.average < star.name}">★</span>
           </div>
           <h5 class="text-center header-text">{{ _review.total }} Total Reviews</h5>
         </div>
@@ -52,7 +52,7 @@
                   <div>{{ review.book_type }}</div>
                 </div>
                 <div>
-                  <span class="glyphicon glyphicon-star star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}"></span> <span class="header-bold xsm">{{ review.title }}</span>
+                  <span class="star-green star-sm" ng-repeat="star in _review.stars" ng-class="{active: review.rating < star.name}">★</span> <span class="header-bold xsm">{{ review.title }}</span>
                 </div>
               </header><!-- :article-header -->
               <summary read-more content="review.content" limit="800" class="content-text"></summary>
@@ -75,7 +75,7 @@
         <section class="col-md-4">
           <aside class="well grey text-center">
             <div>
-              <span class="glyphicon glyphicon-star star-green star-md" ng-repeat="star in _review.stars" ng-class="{active: _review.average < star.name}"></span>
+              <span class="star-green star-md" ng-repeat="star in _review.stars" ng-class="{active: _review.average < star.name}">★</span>
               <h6 class="star-header">Avarage Rating: {{ _review.average }} out of 5 star</h6>
             </div>
             <div class="row progressbar-container" ng-repeat="star in _review.stars | orderBy:'-name'">
