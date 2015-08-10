@@ -10,7 +10,7 @@
         </div>
       </header><!-- /.row :document-header -->
       <div class="row">
-        <div class="col-md-12">See reviews from:</div>
+        <div class="col-md-8"><div class="ribbon-header">See reviews from:</div></div>
       </div>
       <div class="row">
         <section class="col-md-8">
@@ -32,8 +32,8 @@
                 <div class="pull-right">
                   <span>Sort by:</span>
                   <div class="btn-group" dropdown>
-                    <button  class="btn btn-" dropdown-toggle>
-                      {{ _review.orderBy.name }} <span class="caret"></span>
+                    <button  class="btn btn-grey" dropdown-toggle>
+                      {{ _review.orderBy.name }} <span class="divider"></span> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
                       <li role="menuitem" ng-repeat="order in _review.orders"><a href ng-click="_review.setOrder(order)">{{ order.name }}</a></li>
@@ -66,7 +66,7 @@
                   <a href class="link-green pull-right"><i class="glyphicon glyphicon-flag"></i> Flag This Content For Review</a>
                 </div ng-show="review.voted">
                 <div ng-show="review.voted">Thank you for voting this review.</div>
-                <hr>
+                <div class="content-divider"></div>
               </footer><!-- :article-footer -->
             </article><!-- /.col-md-12 -->
           </div><!-- ./row -->
@@ -99,15 +99,15 @@
             <div class="mt-5">
               <a class="link-green link-bold">View All {{ _review.total }} Reviews</a>
             </div>
-            <div><a class="btn btn-success"><span class="icon comment" aria-hidden="true"></span> Add Review</a></div>
+            <div><a class="btn btn-dark-green"><span class="icon comment" aria-hidden="true"></span> ADD A REVIEW</a></div>
           </aside><!-- /.well -->
           <aside class="well">
-            <div class="text-center">Paperback</div>
-            <div class="text-center">{{ 2 | currency }}</div>
-            <div class="text-center"><a href class="btn btn-success">{{ 'Add to cart' | uppercase }}</a></div>
-            <div class="text-center"><a href class="btn btn-primary">{{ 'Buy else where' | uppercase }}<span class="caret"></span></a></div>
+            <div class="text-center header-italic sm">Paperback</div>
+            <div class="text-center header-price">{{ 2 | currency }}</div>
+            <div class="text-center"><a href class="btn btn-yellow">{{ 'Add to cart' | uppercase }}</a></div>
+            <div class="text-center"><a href class="btn btn-grey">{{ 'Buy else where' | uppercase }}<span class="divider"></span><span class="caret"></span></a></div>
             <div class="text-center">-OR-</div>
-            <div class="text-center"><a href class="btn btn-warning">{{ 'Buy ebook now' | uppercase }}</a></div>
+            <div class="text-center"><a href class="btn btn-orange">{{ 'Buy ebook now' | uppercase }}</a></div>
           </aside><!-- /.well -->
         </section><!-- /.col-md-4 :right-section -->
       </div>

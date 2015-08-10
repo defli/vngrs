@@ -1,12 +1,85 @@
 .ba {
-	.btn-dark-green {
-		.button-variant(@btn-dark-green-color; @btn-dark-green-bg; @btn-dark-green-border);
+	.btn {
+		position: relative;
+
+		.caret {
+			margin-left: 20px;
+		}
+		.divider {
+			position: absolute;
+			top: 0;
+			margin-left: 10px;
+			bottom: 0;
+			border-left: 1px solid #d1d1d1;
+		}
+	}
+	.btn-nav-dark-green {
+		.button-variant(@btn-dark-nav-green-color; @btn-dark-nav-green-bg; @btn-dark-nav-green-border);
 	}
 
-	.btn-light-blue {
-		.button-variant(@btn-light-blue-color; @btn-light-blue-bg; @btn-light-blue-border);		
+	.btn-nav-light-blue {
+		.button-variant(@btn-light-blue-color; @btn-light-blue-bg; @btn-light-blue-border);
 	}
+
+	.btn-dark-green {
+		.button-variant(@btn-dark-green-color; @btn-dark-green-bg; @btn-dark-green-border);	
+		.btn-styles(@btn-dark-green-bg, @btn-dark-green-border);	
+	}
+
+	.btn-yellow {
+		.button-variant(@btn-yellow-color; @btn-yellow-bg; @btn-yellow-border);	
+		.btn-styles(@btn-yellow-bg, @btn-yellow-border);	
+	}
+
+	.btn-grey {
+		.button-variant(@btn-grey-color; @btn-grey-bg; @btn-grey-border);	
+		.btn-styles(@btn-grey-bg, @btn-grey-border);	
+	}
+
+	.btn-orange {
+		.button-variant(@btn-orange-color; @btn-orange-bg; @btn-orange-border);	
+		.btn-styles(@btn-orange-bg, @btn-orange-border);	
+	}	
+
 	.btn-no-radius {
 		border-radius: 0;
+	}
+
+
+}
+
+// Mixin for generating new styles
+.btn-styles(@btn-color: #555, @border-color:#555) {
+	font-size: 9pt;
+	border-radius: 6px;
+
+	#gradient > .vertical(@start-color: lighten(@btn-color, 10%); @end-color: @btn-color);
+	.reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
+	background-repeat: repeat-x;
+	border-color: @border-color;
+
+	&:hover,
+	&:focus  {
+		#gradient > .vertical(@start-color: lighten(@btn-color, 5%); @end-color: @btn-color);
+	}
+
+	&:active,
+	&.active {
+		background-color: lighten(@btn-color, 12%);
+		border-color: lighten(@btn-color, 14%);
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: lighten(@btn-color, 12%);
+			background-image: none;
+		}
 	}
 }
