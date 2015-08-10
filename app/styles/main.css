@@ -611,6 +611,25 @@ fieldset[disabled] .ba .btn-light-blue.active {
 .ba .well.grey {
   background-color: #e5e5e5;
 }
+.ba .icon {
+  background: url(../images/icons.png);
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 13px;
+  position: relative;
+  display: inline-block;
+}
+.ba .icon.basket {
+  background-position: 0px 0px;
+  width: 17px;
+}
+.ba .icon.comment {
+  background-position: 0px -23px;
+  width: 28px;
+}
+.ba .icon.search {
+  background-position: 0px -48px;
+}
 .ba {
   background-color: #e7e7e7;
   font-family: "brandon-grotesque", Arial, times;
