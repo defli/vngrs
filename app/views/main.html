@@ -24,9 +24,9 @@
               </div> <!-- /.col-md-12 -->
             </div><!-- /.row -->
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 mt-15">
                 <div class="pull-left">
-                  <h3 class="header-italic sm">{{ _review.orderBy.name }}</h3>
+                  <h3 class="header-italic mt-0 sm">{{ _review.orderBy.name }}</h3>
                   <h4 class="header-bold sm">Reviews</h4>
                 </div>
                 <div class="pull-right">
@@ -70,11 +70,6 @@
               </footer><!-- :article-footer -->
             </article><!-- /.col-md-12 -->
           </div><!-- ./row -->
-          <div class="row sticky-footer" >
-            <footer class="col-md-12">
-              <a href class="btn pull-right">Add Review</a>
-            </footer><!-- /.col-md-12 :dodument-footer  -->
-          </div><!-- /.row -->
           <infinite change="_review.setLimit(limit, apply)" limit-to="_review.limitTo"></infinite>
         </section><!-- /.col-md-8 :left-section -->
         <section class="col-md-4">
@@ -104,10 +99,10 @@
           <aside class="well">
             <div class="text-center header-italic sm">Paperback</div>
             <div class="text-center header-price">{{ 2 | currency }}</div>
-            <div class="text-center"><a href class="btn btn-yellow">{{ 'Add to cart' | uppercase }}</a></div>
-            <div class="text-center"><a href class="btn btn-grey">{{ 'Buy else where' | uppercase }}<span class="divider"></span><span class="caret"></span></a></div>
-            <div class="text-center">-OR-</div>
-            <div class="text-center"><a href class="btn btn-orange">{{ 'Buy ebook now' | uppercase }}</a></div>
+            <div class="text-center mb-10"><a href class="btn btn-yellow w-160">{{ 'Add to cart' | uppercase }}</a></div>
+            <div class="text-center mb-10"><a href class="btn btn-grey w-160">{{ 'Buy else where' | uppercase }}<span class="divider"></span><span class="caret caret-right"></span></a></div>
+            <div class="text-center mb-10">-OR-</div>
+            <div class="text-center mb-10"><a href class="btn btn-orange w-160">{{ 'Buy ebook now' | uppercase }}</a></div>
           </aside><!-- /.well -->
         </section><!-- /.col-md-4 :right-section -->
       </div>
