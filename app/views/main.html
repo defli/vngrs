@@ -78,24 +78,28 @@
           <infinite change="_review.setLimit(limit, apply)" limit-to="_review.limitTo"></infinite>
         </section><!-- /.col-md-8 :left-section -->
         <section class="col-md-4">
-          <aside class="well">
-            <div class="text-center">
+          <aside class="well grey text-center">
+            <div>
               <span class="glyphicon glyphicon-star star-green star-md" ng-repeat="star in _review.stars" ng-class="{active: _review.average < star.name}"></span>
-              <h6>Avarage Rating: Review {{ _review.average }} out of 5 star</h6>
+              <h6 class="star-header">Avarage Rating: {{ _review.average }} out of 5 star</h6>
             </div>
-            <div class="row" ng-repeat="star in _review.stars | orderBy:-name">
-              <div class="pull-left">
-                {{ star.name }}
+            <div class="row progressbar-container" ng-repeat="star in _review.stars | orderBy:'-name'">
+              <div class="pull-left w-45">
+                <span class="star-text">{{ star.name }} star</span>
               </div>
-              <div class="col-sm-9">
-                <div class="progress">
+              <div class="pull-left w-80p">
+                <div class="progress mt-3">
                   <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{width: star.percentage + '%'}">
                     <span class="sr-only">{{ star.percentage }}</span>
                   </div>
                 </div>
               </div>
-              <div class="pull-right">({{ star.count }})</div>
+              <div class="pull-left star-text grey">({{ star.count }})</div>
             </div>
+            <div class="mt-5">
+              <a class="link-green link-bold">View All {{ _review.total }} Reviews</a>
+            </div>
+            <div><a class="btn">Add Review</a></div>
           </aside><!-- /.well -->
           <aside class="well">
             <div class="text-center">Paperback</div>
