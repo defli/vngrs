@@ -365,7 +365,8 @@ grunt.initConfig({
         '*.html',
         'views/{,*/}*.html',
         'images/{,*/}*.{webp}',
-        'styles/fonts/{,*/}*.*'
+        'fonts/*',
+        'styles/fonts/{,*/}*.*'        
         ]
         }, {
           expand: true,
