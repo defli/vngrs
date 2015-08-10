@@ -1,6 +1,6 @@
 # Booka
 
-The test isn't completed yet :) It needs makeup.
+The test is completed.
 
 ## Used technologies
 1. AngularJS
